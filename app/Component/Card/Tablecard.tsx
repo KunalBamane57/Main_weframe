@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import table from "./Big-table.png";
-import wishlist from "./wishlist.png";
 
 interface TablecardProps {
     cardIndex: number;
@@ -9,6 +8,12 @@ interface TablecardProps {
 }
 
 const Tablecard: React.FC<TablecardProps> = ({ cardIndex, customStyles = "" }) => {
+    const [isHeartSelected, setIsHeartSelected] = useState(false);
+
+    const toggleHeart = () => {
+        setIsHeartSelected(!isHeartSelected);
+    };
+
     return (
         <div
             className={`card py-4 rounded group hover:transition-shadow duration-300 ${customStyles}`}
@@ -16,7 +21,25 @@ const Tablecard: React.FC<TablecardProps> = ({ cardIndex, customStyles = "" }) =
             <div className="image rounded-lg">
                 <div className="imagebg bg-[#f9f7f5] px-5 py-5">
                     <div className="heart flex justify-between items-center">
-                        <Image src={wishlist} alt="Wishlist Icon" className="" />
+                        <button
+                            className="w-8 h-8 flex justify-center items-center"
+                            onClick={toggleHeart}
+                            aria-label="Toggle Wishlist"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill={isHeartSelected ? "#ec4899" : "none"}
+                                stroke={isHeartSelected ? "none" : "currentColor"}
+                                strokeWidth={isHeartSelected ? "0" : "1"}
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className={`w-8 h-8 transition-transform duration-300 ${isHeartSelected ? 'scale-110' : ''}`} // Add scaling effect on click
+                            >
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+                            </svg>
+
+                        </button>
                         <div className="al-lot gap-2">
                             <span className="upppercase bg-white text-xs px-2 rounded-md">
                                 Art de la table
