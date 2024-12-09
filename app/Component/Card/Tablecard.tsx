@@ -19,7 +19,7 @@ const Tablecard: React.FC<TablecardProps> = ({ cardIndex, customStyles = "" }) =
             className={`card py-4 rounded group hover:transition-shadow duration-300 ${customStyles}`}
         >
             <div className="image rounded-lg">
-                <div className="imagebg bg-[#f9f7f5] px-5 py-5">
+                <div className="imagebg bg-[#f6f4f3] px-5 py-5">
                     <div className="heart flex justify-between items-center">
                         <button
                             className="w-8 h-8 flex justify-center items-center"
