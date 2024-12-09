@@ -23,21 +23,28 @@ const Card = () => {
   };
 
   return (
-    <div className="bg-[#fbf9f8] px-10 relative h-[550px]">
-      <div className="article-headline flex justify-between py-5">
-        <h1 className="text-3xl">Articles similaires</h1>
-        <span className="underline underline-offset-2">Voir toute la collection</span>
+    <div className="bg-[#fbf9f8] px-5 sm:px-8 lg:px-10 relative h-auto lg:h-[550px]">
+      {/* Article Headline */}
+      <div className="article-headline flex flex-col sm:flex-row sm:justify-between py-5">
+        <h1 className="text-2xl sm:text-3xl mb-3 sm:mb-0">Articles similaires</h1>
+        <span className="underline underline-offset-2 text-sm sm:text-base">
+          Voir toute la collection
+        </span>
       </div>
+
+      {/* Card Section */}
       <div className="card-section flex items-center justify-center relative">
+        {/* Previous Button */}
         <button
           onClick={prevPage}
-          className="absolute left-0 bg-[#5cd2dd] text-white px-4 py-2 rounded-md h-12 w-12 flex items-center justify-center"
+          className="absolute left-0 bg-[#5cd2dd] text-white h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center rounded-md"
           style={{ transform: 'translateX(-50%)' }}
         >
-          <Image src={left_arrow} alt="Previous" className="h-6 w-6" />
+          <Image src={left_arrow} alt="Previous" className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
 
-        <div className="cards flex px-10 gap-5">
+        {/* Cards */}
+        <div className="cards flex overflow-x-auto sm:overflow-visible px-2 sm:px-4 lg:px-10 gap-3 sm:gap-5">
           {Array.from({ length: cardsPerPage }).map((_, index) => {
             const cardIndex = startIndex + index;
             if (cardIndex < totalCards) {
@@ -45,7 +52,7 @@ const Card = () => {
                 <Tablecard
                   key={cardIndex}
                   cardIndex={cardIndex}
-                  customStyles="w-64 h-64"
+                  customStyles="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-48"
                 />
               );
             }
@@ -53,12 +60,13 @@ const Card = () => {
           })}
         </div>
 
+        {/* Next Button */}
         <button
           onClick={nextPage}
-          className="absolute right-0 bg-[#5cd2dd] text-white px-4 py-2 rounded-md h-12 w-12 flex items-center justify-center"
+          className="absolute right-0 bg-[#5cd2dd] text-white h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center rounded-md"
           style={{ transform: 'translateX(50%)' }}
         >
-          <Image src={right_arrow} alt="Next" className="h-6 w-6" />
+          <Image src={right_arrow} alt="Next" className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
       </div>
     </div>
