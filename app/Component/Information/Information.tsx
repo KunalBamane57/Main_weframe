@@ -16,7 +16,7 @@ const Information = () => {
       <div className="Component-detail px-4 md:px-10 flex flex-col md:flex-row">
         <div className="left w-full md:w-[50%] flex items-center mb-5 md:mb-0">
           <div className="infoimage w-full px-3 py-3 bg-[#f8f6f4] rounded-lg flex">
-            <div className="angles flex flex-row md:flex-col gap-2 md:gap-1">
+            <div className="angles flex flex-col gap-2 md:gap-1">
               <Image src={table} alt="Image" className="h-12 w-12 rounded-lg" />
               <Image src={table} alt="Image" className="h-12 w-12 rounded-lg opacity-50" />
               <Image src={table} alt="Image" className="h-12 w-12 rounded-lg opacity-50" />

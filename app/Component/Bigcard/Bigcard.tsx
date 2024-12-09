@@ -38,7 +38,7 @@ const Bigcard = () => {
       <div className="card-section relative">
         <button
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#5cd2dd] text-white px-4 py-2 rounded-md h-12 w-12 flex items-center justify-center z-10 block lg:hidden"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#5cd2dd] text-white px-4 py-2 rounded-md h-12 w-12 flex items-center justify-center z-10 lg:hidden"
         >
           <Image src={leftArrow} alt="Previous" className="h-6 w-6" />
         </button>
@@ -52,7 +52,7 @@ const Bigcard = () => {
               return (
                 <div
                   key={index}
-                  className="snap-center lg:snap-none flex-shrink-0 w-[460px] h-[470px]"
+                  className="snap-center lg:snap-none flex-shrink-0 w-[460px] h-[530px]"
                 >
                   <Tablecard cardIndex={index} />
                 </div>
