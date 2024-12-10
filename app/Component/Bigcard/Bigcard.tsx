@@ -63,7 +63,7 @@ const Bigcard = () => {
         </div>
         <button
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#5cd2dd] text-white px-4 py-2 rounded-md h-12 w-12 flex items-center justify-center z-10 block lg:hidden"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#5cd2dd] text-white px-4 py-2 rounded-md h-12 w-12 flex items-center justify-center z-10 lg:hidden"
         >
           <Image src={rightArrow} alt="Next" className="h-6 w-6" />
         </button>
