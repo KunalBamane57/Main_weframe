@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
             <Image src={logo} alt="Logo" className="h-10 md:h-auto" />
           </div>
           <div className="search w-full md:w-[60%] flex justify-center md:justify-start mb-4 md:mb-0 relative">
-            <div className="searchbar bg-[#f9fafb] w-[100%] md:w-[85%] h-12 rounded-md flex justify-between px-5 items-center relative">
+            <div className="searchbar bg-[#f9fafb] w-[100%] md:w-[85%] h-12 rounded-md flex justify-between px-5 items-center relative border border-transparent focus-within:shadow-md transition-all">
               <input
                 type="text"
                 placeholder="Rechercher un produit"
@@ -70,15 +70,15 @@ const Navbar: React.FC = () => {
               <Image src={search} alt="Search Icon" className="h-6" />
             </div>
 
+
             {showSuggestions && (
               <div
-                className={`absolute bg-white shadow-xl border-0 rounded-md top-full mt-1 z-10 transition-all duration-300 ${
-                  showSuggestions ? "w-[130%]" : "w-[85%]"
-                }`}
+                className={`absolute bg-white shadow-xl border-0 rounded-md top-full mt-1 z-10 transition-all duration-300 ${showSuggestions ? "w-[130%]" : "w-[85%]"
+                  }`}
               >
                 <div className="flex">
                   <div className="w-1/3 p-4 flex flex-col">
-                  <h2 className="text-[#9c9c9c] text-sm">Suggestions</h2>
+                    <h2 className="text-[#9c9c9c] text-sm">Suggestions</h2>
                     <ul>
                       {suggestions
                         .filter((s) =>
