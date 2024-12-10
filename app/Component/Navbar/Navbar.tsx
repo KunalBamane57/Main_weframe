@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
                 }`}
               >
                 <div className="flex">
-                  <div className="w-1/3 p-4">
+                  <div className="w-1/3 p-4 flex flex-col">
                   <h2 className="text-[#9c9c9c] text-sm">Suggestions</h2>
                     <ul>
                       {suggestions
@@ -102,11 +102,11 @@ const Navbar: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="w-2/3 p-4 overflow-x-auto flex gap-4">
+                  <div className="w-2/3 p-4 overflow-x-auto flex gap-4 flex-wrap justify-center">
                     {products.map((product, index) => (
                       <div
                         key={index}
-                        className="flex flex-col gap-2 p-2 rounded cursor-pointer min-w-[150px]"
+                        className="flex flex-col gap-2 p-2 rounded cursor-pointer max-w-[150px]"
                       >
                         <Image
                           src={product.image}
